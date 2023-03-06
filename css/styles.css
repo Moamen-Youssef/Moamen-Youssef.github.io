@@ -1,0 +1,661 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+:root {
+    --main-color: #2795a7;
+    --text: #777;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+
+}
+
+/*START MAIN SECTION*/
+body a {
+    text-decoration: none;
+}
+
+body section {
+    height: 100vh;
+    margin-bottom: 100px;
+}
+
+section .back-text {
+    position: relative;
+    height: 100px;
+    text-transform: uppercase;
+
+}
+
+section .back-text h1 {
+    -webkit-text-stroke: lightgray 1px;
+    color: transparent;
+    font-size: 80px;
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+
+}
+
+section .back-text h2 {
+    position: absolute;
+    right: 50%;
+    top: 60%;
+    transform: translate(50%, -60%);
+    color: var(--main-color);
+
+}
+
+
+#main {
+    background-color: var(--main-color);
+    height: 100vh;
+    position: relative;
+
+}
+
+#main header {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    z-index: 5;
+    background-color: var(--main-color);
+}
+
+/* header & nav */
+header nav {
+    position: absolute;
+    width: 80%;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+header nav ul a {
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-align: center;
+    color: rgb(236, 236, 236);
+
+}
+
+header nav ul a:hover {
+    font-weight: 700;
+    color: black;
+
+
+}
+
+header nav .close {
+    display: none;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 750px;
+    margin: auto;
+    padding-top: 50px;
+}
+
+#main img {
+    width: 140px;
+    height: 140px;
+    margin-top: 20px;
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    top: 100px;
+    border: solid;
+    padding: 1px;
+    background-color: black;
+    cursor: pointer;
+}
+
+
+#main img.on-scroll {
+    top: 10px;
+    left: 0;
+    width: 50px;
+    height: 50px;
+}
+
+header nav .burger-icon {
+    display: none;
+    cursor: pointer;
+    color: #ffff;
+}
+
+/* ############# */
+
+/* welcome text */
+.container {
+    border: solid;
+}
+
+#main .container .welcome-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+}
+
+#main .container .welcome-text p {
+    font-weight: 800;
+    font-size: 50px;
+    color: var(--main-color);
+    opacity: 0.95;
+    -webkit-text-stroke: white 2px;
+}
+
+#main .container .welcome-text div p {
+    -webkit-text-stroke: unset;
+    color: black;
+}
+
+#main .container .socials {
+    position: absolute;
+    bottom: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+/*END MAIN SECTION*/
+
+/* START ABOUT ME SECTION */
+#about-me {
+    height: fit-content;
+}
+
+#about-me * {
+    margin-left: 25px;
+}
+
+#about-me .info-1 {
+    margin-left: 50px;
+}
+
+#about-me .info-1 p {
+    width: 70%;
+    color: var(--text);
+}
+
+#about-me .info-2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+#about-me .info-2 div span {
+    color: var(--text);
+}
+
+#about-me .E-E .content {
+    border-left: solid var(--main-color);
+    margin-left: 40px;
+}
+
+#about-me .E-E .content h4:not(.content h4:first-child) {
+    margin-top: 50px;
+}
+
+#about-me .E-E .content h6 span {
+    color: var(--text);
+}
+
+#about-me .E-E .content h4,
+#about-me .E-E .content p {
+    width: 80%;
+}
+
+#about-me .E-E .content h4::before {
+    content: '';
+    position: absolute;
+    border: solid var(--main-color);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    bottom: 0;
+    left: -36px;
+}
+
+#about-me .E-E .content h4::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    bottom: 5px;
+    left: -31px;
+
+    background-color: var(--main-color);
+}
+
+#about-me .E-E .education .content p a {
+    color: var(--main-color);
+    margin-left: 0;
+}
+
+#about-me .E-E .education .content p a:hover {
+    color: rgb(21, 180, 204);
+}
+
+#about-me .E-E .education .content p a span {
+    margin-left: 5px;
+    display: block;
+}
+
+/* END ABOUT ME SECTION */
+
+/* START SKILLS SECTION */
+#skills {
+    height: fit-content;
+    padding-bottom: 55px;
+}
+
+#skills .skills-cont {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#skills .skills-cont .skill {
+    width: 45%;
+    height: 20px;
+    border-radius: 10px/10px;
+    background-color: #eee;
+    position: relative;
+    margin: 10px;
+    margin-bottom: 50px;
+
+}
+
+#skills .skills-cont .skill::after {
+    position: absolute;
+    content: attr(data-prog);
+    font-weight: 700;
+    font-size: 1rem;
+    right: 0;
+    top: -30px;
+}
+
+#skills .skills-cont .skill::before {
+    position: absolute;
+    content: attr(skill);
+    font-weight: 600;
+    font-size: 1.1rem;
+    left: 5px;
+    top: -30px;
+}
+
+#skills .skills-cont .skill span {
+    display: block;
+    border-radius: 10px/10px;
+    height: 100%;
+    width: 0;
+    background-color: var(--main-color);
+    transition: ease 1s;
+}
+
+#skills .skills-cont .skill:nth-child(2) span {
+    background-color: #dc3545;
+}
+
+#skills .skills-cont .skill:nth-child(3) span {
+    background-color: black;
+}
+
+#skills .skills-cont .skill:nth-child(4) span {
+    background-color: #ffc107;
+}
+
+#skills .skills-cont .skill:nth-child(5) span {
+    background-color: #0bceaf;
+}
+
+i.fa-gear {
+    animation-name: rotating-icon;
+    animation-iteration-count: infinite;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+}
+
+i.react {
+    position: absolute;
+    right: 100px;
+    top: -25px;
+}
+
+.E-E .education .meta {
+    position: relative;
+    left: -25px;
+}
+
+.prog {
+    position: absolute;
+    left: 100px;
+    bottom: 3px;
+
+    width: fit-content;
+    height: fit-content;
+}
+
+@keyframes rotating-icon {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* END SKILLS SECTION */
+
+/* START PORTFOLIO SECTION */
+#portfolio {
+    height: fit-content;
+    margin-top: 0;
+}
+
+#portfolio .projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    padding: 20px 0;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.projects a {
+    width: 380px
+}
+
+.projects .project-card {
+    border: solid 1px var(--text);
+    border-right: none;
+    border-bottom: none;
+    width: 100%;
+    height: 430px;
+    border-radius: 7px;
+}
+
+.projects .project-card .project-img {
+    width: 100%;
+    height: 90%;
+    border-radius: 7px;
+}
+
+.projects .project-card .project-name {
+    background-color: var(--text);
+    color: white;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    height: 40px;
+    border-radius: 0 50%;
+    margin-bottom: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.projects .project-card .project-name h3 {
+    position: absolute;
+    left: -150%;
+}
+
+.projects .project-name.appear {
+    border-radius: 8px;
+    transition: ease 0.5s;
+}
+
+.projects .project-name h3.appear {
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transition: ease 0.5s;
+}
+
+.projects .project-card.appear {
+    border-bottom: solid black;
+}
+
+/* END PORTFOLIO SECTION */
+
+/* START CONTACT SECTION */
+#contact {
+    height: fit-content;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+#contact .contact-me {
+    width: 100%;
+    height: fit-content;
+    background-color: var(--main-color);
+    border-radius: 0 50% 0 50px;
+    padding: 40px;
+}
+
+
+
+.contact-me h3 {
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.socials,
+.contacts-sites {
+    text-align: center;
+    width: 40%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.socials i {
+    border-radius: 50%;
+    background-color: white;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+i.fa-github {
+    color: #171515;
+}
+
+i.fa-whatsapp {
+    color: #4FCE5D;
+}
+
+i.fa-free-code-camp {
+    background-color: #0a0a23;
+}
+
+/*  END CONTACT SECTION*/
+
+@media (max-width:800px) {
+    /* HEADIND AND MAIN SECTION */
+
+    /* move image to the top */
+    #main header {
+        transition: ease .6s;
+    }
+
+    #main header.active {
+        background-color: #ffff;
+        height: 230px;
+    }
+
+    #main img {
+        margin-top: 0;
+        top: 15px;
+        transition: 0.6s;
+        left: -10px;
+        width: 50px;
+        height: 50px;
+        z-index: 15;
+        padding: 0;
+    }
+
+    /* ################## */
+
+    /* display the burger icon*/
+    header nav .burger-icon {
+        display: block;
+        margin-left: 99%;
+        padding-top: 22px;
+        font-size: 30px;
+        transition: ease-in-out 0.6s;
+    }
+
+    header nav .close {
+        display: block;
+        position: absolute;
+        font-size: 25px;
+        font-weight: 700;
+        right: -22px;
+        top: -45px;
+        opacity: 0;
+        transition: ease-in-out 0.7s;
+        cursor: pointer;
+        border: solid white 1px;
+        color: white;
+        border-radius: 50%;
+        text-align: center;
+        width: 40px;
+        height: 40px;
+    }
+
+    header nav .close.active {
+        opacity: 1;
+        top: 12px;
+        color: black;
+        border: solid black 1px;
+    }
+
+    header nav .close.active:hover {
+        transition: ease-in-out 0.4s;
+        color: red;
+    }
+
+    header nav .close.transition-faster {
+        transition: unset;
+    }
+
+    /* ####################### */
+
+    /*nav bar elements behaviour and styling */
+    header nav ul {
+        display: none;
+    }
+
+    header nav ul.sm-screens {
+        display: flex;
+        padding-top: 20px;
+        flex-direction: column;
+        position: absolute;
+        top: -180px;
+        width: 100%;
+        right: -23px;
+        gap: 10px;
+        transition: ease 0.5s;
+    }
+
+    header nav ul.sm-screens.active {
+        top: 50px;
+    }
+
+    nav ul.sm-screens a {
+        position: absolute;
+        top: -100px;
+        left: -60px;
+        color: black;
+        font-weight: 400;
+        transition: ease-in-out 0.7s;
+    }
+
+    header nav ul a:hover {
+        transition: unset;
+        color: var(--main-color);
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    /* ################################ */
+
+    /* change font of the welcome text*/
+    #main .container .welcome-text p {
+        font-size: 40px;
+    }
+
+    /* ########################### */
+    /* END MAIN SECTION */
+    /* START ABOUT ME SECTION */
+    #about-me .info-2 div {
+        width: 100%;
+    }
+
+    #about-me .E-E {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    #about-me .E-E *:not(i) {
+        width: 100%;
+    }
+
+    #about-me .E-E .content h6 {
+        width: 70%;
+    }
+
+    /* END ABOUT ME SECTION */
+
+    /* START SKILLS SECTION */
+    #skills .skills-cont .skill {
+        width: 90%;
+    }
+
+    /* END SKILLS SECTION */
+
+    /* PORTFOLIO SECTION */
+    .projects a {
+        width: 60%;
+        margin: auto;
+    }
+
+    #portfolio .projects {
+        gap: 45px;
+    }
+
+    .socials {
+        width: 60%;
+    }
+}
+
+@media (max-width: 500px) {
+    .projects a {
+        width: 90%;
+        margin: auto;
+    }
+
+    .socials {
+        width: 75%;
+    }
+}
