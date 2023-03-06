@@ -212,13 +212,16 @@ const  data = async()=>{
 
 //-[10]
     const confirmAtteptance = () => {
-
+        if(sessionStorage.length !== questionsArr.length){
+            window.alert('there are still questions that you haven\'t seen yet')
+        }
+        else{
             let confirmMsg = window.confirm("Are you sure ? you will not be able to get back")
             if (confirmMsg == true) {
                 window.location.replace('result.html');
             }
     }
-
+    }
 //END 
 
 //start execution
