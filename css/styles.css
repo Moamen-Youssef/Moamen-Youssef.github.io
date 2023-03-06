@@ -172,7 +172,7 @@ header nav .burger-icon {
     height: fit-content;
 }
 
-#about-me * {
+#about-me *:not(.prog) {
     padding-left: 25px;
 }
 
@@ -255,7 +255,12 @@ header nav .burger-icon {
     margin-left: 5px;
     display: block;
 }
+.prog{
+    position: absolute;
+    left: 130px;
+    bottom: 3px;
 
+    }
 /* END ABOUT ME SECTION */
 
 /* START SKILLS SECTION */
@@ -330,6 +335,7 @@ i.fa-gear {
     animation-iteration-count: infinite;
     animation-duration: 1.5s;
     animation-timing-function: linear;
+
 }
 
 i.react {
@@ -343,14 +349,7 @@ i.react {
     left: -25px;
 }
 
-.prog {
-    position: absolute;
-    left: 100px;
-    bottom: 3px;
 
-    width: fit-content;
-    height: fit-content;
-}
 
 @keyframes rotating-icon {
     to {
@@ -637,7 +636,7 @@ i.fa-free-code-camp {
         padding-left: 25px;
     }
 
-    .prog {
+    i.prog {
         bottom: 20px;
     }
 
