@@ -212,7 +212,7 @@ const  data = async()=>{
 
 //-[10]
     const confirmAtteptance = () => {
-        if (sessionStorage.length !== questionsArr.length + 1) {
+        if (sessionStorage.length !== questionsArr.length) {
             window.alert('there are still questions that you haven\'t seen yet')
 
         }
