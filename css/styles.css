@@ -8,7 +8,7 @@ body {
     --text: #777;
 }
 
-* {
+body * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -37,9 +37,8 @@ section .back-text h1 {
     -webkit-text-stroke: lightgray 1px;
     color: transparent;
     font-size: 80px;
-    position: absolute;
-    right: 50%;
-    transform: translateX(50%);
+    width: 100%;
+    text-align: center;
 
 }
 
@@ -179,6 +178,11 @@ header nav .burger-icon {
     margin-left: 25px;
 }
 
+#about-me .back-text *,
+#about-me .back-text {
+    margin-left: 0;
+}
+
 #about-me .info-1 {
     margin-left: 50px;
 }
@@ -188,7 +192,7 @@ header nav .burger-icon {
     color: var(--text);
 }
 
-#about-me .info-2 {
+.meta #about-me .info-2 {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -496,6 +500,7 @@ i.fa-free-code-camp {
     /* move image to the top */
     #main header {
         transition: ease .6s;
+
     }
 
     #main header.active {
@@ -576,6 +581,7 @@ i.fa-free-code-camp {
         right: -23px;
         gap: 10px;
         transition: ease 0.5s;
+
     }
 
     header nav ul.sm-screens.active {
@@ -585,7 +591,7 @@ i.fa-free-code-camp {
     nav ul.sm-screens a {
         position: absolute;
         top: -100px;
-        left: -60px;
+        left: 0px;
         color: black;
         font-weight: 400;
         transition: ease-in-out 0.7s;
@@ -621,32 +627,101 @@ i.fa-free-code-camp {
         width: 100%;
     }
 
+    #about-me .E-E .content {
+        border-left: none;
+        border-bottom: solid var(--main-color);
+    }
+
+    .E-E .education .meta {
+        left: 0;
+        padding-left: 25px;
+    }
+
+    .prog {
+        bottom: 20px;
+    }
+
     #about-me .E-E .content h6 {
         width: 70%;
     }
 
-    /* END ABOUT ME SECTION */
-
-    /* START SKILLS SECTION */
-    #skills .skills-cont .skill {
-        width: 90%;
+    #about-me * {
+        margin-left: 0;
     }
 
-    /* END SKILLS SECTION */
 
-    /* PORTFOLIO SECTION */
-    .projects a {
-        width: 60%;
-        margin: auto;
+    #about-me .E-E .content,
+    #about-me .info-1 {
+        margin-left: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
     }
 
-    #portfolio .projects {
-        gap: 45px;
+    #about-me .E-E h1 {
+        padding-left: 8px;
     }
 
-    .socials {
-        width: 60%;
+    #about-me .info-1 h2 {
+        width: 100%;
+        text-align: center;
     }
+
+    #about-me .info-2 {
+        text-align: center;
+
+    }
+
+    #about-me .info-2 * {
+        margin-bottom: 15px;
+    }
+
+    #about-me .E-E .content h4::before {
+        left: -20px;
+        bottom: 0px;
+
+    }
+
+    #about-me .E-E .content h4::after {
+        left: -15px;
+        bottom: 5px;
+    }
+
+    #about-me .E-E .content h4.last::before {
+        bottom: 26px;
+    }
+
+    #about-me .E-E .content h4.last::after {
+        bottom: 31px;
+    }
+
+}
+
+
+
+/* END ABOUT ME SECTION */
+
+/* START SKILLS SECTION */
+#skills .skills-cont .skill {
+    width: 90%;
+}
+
+/* END SKILLS SECTION */
+
+/* PORTFOLIO SECTION */
+.projects a {
+    width: 60%;
+    margin: auto;
+}
+
+#portfolio .projects {
+    gap: 45px;
+}
+
+.socials {
+    width: 60%;
 }
 
 @media (max-width: 500px) {
@@ -658,4 +733,30 @@ i.fa-free-code-camp {
     .socials {
         width: 75%;
     }
+}
+
+@media (max-width: 550px) {
+
+    section .back-text h1 {
+        font-size: 50px;
+    }
+
+    section .back-text h2 {
+        margin: auto;
+        text-align: center;
+        margin-top: -25px;
+        width: 70%;
+
+    }
+
+    #main img {
+        margin-left: -14px;
+        margin-top: 4px;
+    }
+
+    #about-me .E-E .content h4 {
+        width: 83%;
+        text-align: start;
+    }
+
 }
