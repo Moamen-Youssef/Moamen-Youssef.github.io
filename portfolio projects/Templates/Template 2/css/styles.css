@@ -1,60 +1,69 @@
-*{
-box-sizing: border-box;
-margin: 0;
-padding: 0;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
 }
-:root{
-    --main-color : #FF9800; ;
+
+:root {
+    --main-color: #FF9800;
+    ;
 }
-body{
+
+body {
     font-family: 'Open Sans', sans-serif;
     position: relative;
 }
-body .img-overlay{
-    position:absolute;
+
+body .img-overlay {
+    position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6) ;   
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 
-section:not(#landing) h1{
+section:not(#landing) h1 {
     color: var(--main-color);
     text-align: center;
     font-weight: 700;
-    margin-bottom:45px;
+    margin-bottom: 45px;
 }
+
 /*fixed features*/
 
 /*bullets*/
-.bullets{
+.bullets {
     position: fixed;
-    right: 0;
+    right: 1.5%;
     top: 30%;
     z-index: 55;
-    width:50px ;
-    height:180px;
+    width: 29px;
+    height: 180px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
 }
-.bullets.inactive{
+
+.bullets.inactive {
     display: none;
 }
 
-.bullets span{
-    position:absolute;
+.bullets span {
+    position: absolute;
     width: 20px;
     height: 20px;
     border: solid var(--main-color) 3px;
     border-radius: 50%;
 }
-.bullets a{
+
+.bullets a {
     position: relative;
 }
-.bullets span::before{
+
+.bullets span::before {
     position: absolute;
     content: attr(sec-name);
     width: 130px;
@@ -62,58 +71,65 @@ section:not(#landing) h1{
     background-color: var(--main-color);
     color: white;
     text-align: center;
-    right:29px;
+    right: 29px;
     top: -7px;
     display: none;
 }
-.bullets span::after{
+
+.bullets span::after {
     position: absolute;
     content: '';
     border: solid;
-    border-width: 10px ; 
-    border-color: transparent transparent  transparent var(--main-color);
-    right: 9.5px ;
+    border-width: 10px;
+    border-color: transparent transparent transparent var(--main-color);
+    right: 9.5px;
     top: -3px;
     display: none;
 }
-.bullets span:hover::before , .bullets span:hover::after{
+
+.bullets span:hover::before,
+.bullets span:hover::after {
     display: block;
 }
+
 /*end*/
 
 /*setting*/
 
 
-.setting-cont{
+.setting-cont {
     position: fixed;
     left: -210px;
     z-index: 55;
-    width:210px ;
-  height: 100vh;
-    background-color: #FFF;  
+    width: 210px;
+    height: 100vh;
+    background-color: #FFF;
     transition: ease 0.5s;
-    min-height:360px ;
+    min-height: 360px;
 }
-.setting-cont.active{
+
+.setting-cont.active {
     left: 0;
 }
-.setting-cont::before{
+
+.setting-cont::before {
     position: absolute;
-    content:'';
+    content: '';
     width: 30px;
     height: 30px;
     background-color: #FFF;
     right: -30px;
     top: 110px;
 }
-.setting-cont i{
+
+.setting-cont i {
     position: absolute;
     right: -30px;
     top: 100px;
     background-color: transparent;
     color: black;
-    border-color: red black ;
-    border-width: 10px ;
+    border-color: red black;
+    border-width: 10px;
     border-radius: 50%;
     width: 30px;
     height: 30px;
@@ -122,98 +138,112 @@ section:not(#landing) h1{
     align-items: center;
     cursor: pointer;
 }
-.setting-cont i.active{
-    animation-name: rotating-icon ;
+
+.setting-cont i.active {
+    animation-name: rotating-icon;
     animation-iteration-count: infinite;
     animation-duration: 1.5s;
     animation-timing-function: linear;
 }
-@keyframes rotating-icon{
-    to{
+
+@keyframes rotating-icon {
+    to {
         transform: rotate(360deg);
     }
 }
+
 /*all elements styles*/
-.setting-cont *{
+.setting-cont * {
     margin: 10px auto;
     width: 90%;
-    background-color:#EEE ;
-    text-align: center; 
-    font-weight:  600;
+    background-color: #EEE;
+    text-align: center;
+    font-weight: 600;
     color: #666;
     font-size: 14px;
     padding-top: 2px;
 }
+
 /*colors box*/
 
-.colors-cont *{
+.colors-cont * {
     margin: 5px auto 8px;
 }
 
 
-.colors{
+.colors {
     display: flex;
     justify-content: space-between;
 }
-.colors span{
+
+.colors span {
     width: 20px;
     height: 20px;
     border-radius: 50%;
     cursor: pointer;
 }
-.colors span.active{
+
+.colors span.active {
     border: solid white;
     width: 23px;
     height: 23px;
 }
 
-.colors span:first-child{
+.colors span:first-child {
     background-color: #FF9800;
 }
-.colors span:nth-child(2){
-    background-color:#E91E63 ;
+
+.colors span:nth-child(2) {
+    background-color: #E91E63;
 }
-.colors span:nth-child(3){
-   background-color:  #009688 ;
+
+.colors span:nth-child(3) {
+    background-color: #009688;
 }
-.colors span:nth-child(4){
-    background-color: #03A9F4; 
+
+.colors span:nth-child(4) {
+    background-color: #03A9F4;
 }
-.colors span:last-child{
+
+.colors span:last-child {
     background-color: #4CAF50;
 }
 
 /*backgrounds and bullets box*/
-.buttons{
+.buttons {
     display: flex;
     justify-content: center;
     gap: 5px;
     padding-bottom: 10px;
 }
-.buttons button{
+
+.buttons button {
     display: block;
     width: 33%;
     border-radius: 5px;
     padding: 2px;
     border: none;
-    background-color: var(--main-color) ;
+    background-color: var(--main-color);
     color: white;
     font-size: 13px;
-    margin:  0 ;
-    opacity: 0.5;   
+    margin: 0;
+    opacity: 0.5;
 }
-.buttons button.active{
-    opacity: 1 ;
+
+.buttons button.active {
+    opacity: 1;
 }
+
 /*reset button*/
-.reset-btn{
+.reset-btn {
     background-color: transparent;
     width: 100%;
 }
-.reset-btn button{
+
+.reset-btn button {
     display: block;
     border: none;
-    background-color:#F44336 ;
+    background-color: #F44336;
     color: white;
     font-weight: 800;
     padding: 7px;
@@ -221,38 +251,44 @@ section:not(#landing) h1{
     border-radius: 4px;
     font-size: 16px;
 }
+
 /*End*/
 
 /*landing section*/
-#landing{
+#landing {
     position: relative;
     height: 100vh;
     width: 100%;
     color: white;
 }
-#landing .landing-cover{
+
+#landing .landing-cover {
     position: relative;
     height: 100vh;
     width: 100%;
 }
-.landing-cover img{
+
+.landing-cover img {
     position: absolute;
     opacity: 0;
     transition: ease 1s;
     width: 100%;
     height: 100%;
 }
-.landing-cover img.active{
+
+.landing-cover img.active {
     opacity: 1;
 }
-#landing .overlay{
+
+#landing .overlay {
     position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6) ;
+    background-color: rgba(0, 0, 0, 0.6);
 }
-#landing .overlay header{
+
+#landing .overlay header {
     width: 80%;
     margin: auto;
     margin-top: 20px;
@@ -260,7 +296,8 @@ section:not(#landing) h1{
     justify-content: space-between;
     align-items: center;
 }
-#landing .overlay header i{
+
+#landing .overlay header i {
     display: none;
     cursor: pointer;
 }
@@ -271,19 +308,23 @@ section:not(#landing) h1{
     justify-content: space-between;
     width: 520px;
 }
- .overlay ul a {
+
+.overlay ul a {
     text-decoration: none;
     color: white;
- }
- .overlay ul a:hover{
+}
+
+.overlay ul a:hover {
     color: var(--main-color);
 
- }
- .overlay nav.sm-screen{
+}
+
+.overlay nav.sm-screen {
     display: block;
     z-index: 5;
- }
- .overlay nav.sm-screen ul{
+}
+
+.overlay nav.sm-screen ul {
     padding-inline-start: 0;
     background-color: white;
     flex-direction: column;
@@ -292,69 +333,79 @@ section:not(#landing) h1{
     width: 100%;
     padding: 5px;
 
- }
- .overlay nav.sm-screen ul::before{
+}
+
+.overlay nav.sm-screen ul::before {
     position: absolute;
     content: "";
     width: 15px;
-    height:15px;
+    height: 15px;
     border: solid;
     border-width: 10px;
     border-color: transparent transparent white transparent;
     right: 10px;
-    top: -19px ;
- }
- .overlay nav.sm-screen  ul li{
+    top: -19px;
+}
+
+.overlay nav.sm-screen ul li {
     color: var(--main-color);
     font-weight: 700;
     padding: 10px;
     padding-bottom: 0;
- }
- .overlay .title{
+}
+
+.overlay .title {
     text-align: center;
     position: absolute;
     top: 50%;
     right: 50%;
-    transform: translate(50%,-50%);
+    transform: translate(50%, -50%);
     width: 100%;
     color: white;
- }
- .overlay .title h1 span{
+}
+
+.overlay .title h1 span {
     color: var(--main-color);
     font-weight: 600;
- }
+}
+
 /* End */
 
 /*Start about us section*/
-#about-us{
+#about-us {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items:flex-start;
+    align-items: flex-start;
     gap: 20px;
     margin-top: 20px;
     margin-bottom: 45px;
 }
+
 #about-us .info {
     padding-top: 30px;
     width: 65%;
-    padding-left: 25px ;
+    padding-left: 25px;
 
 }
-#about-us .info h1{
+
+#about-us .info h1 {
     color: var(--main-color);
-    font-weight:700 ;
+    font-weight: 700;
 }
-#about-us .info p{
+
+#about-us .info p {
     color: rgb(175, 175, 175);
     width: 75%;
     font-size: 17px;
     line-height: 1.8;
 }
-#about-us .image{
+
+#about-us .image {
     width: 33%;
     text-align: center;
 }
+
 .image img {
     width: 60%;
 }
@@ -362,11 +413,12 @@ section:not(#landing) h1{
 /*End about us section*/
 
 /*start our skills section*/
-#our-skills{
+#our-skills {
     background-color: #EEE;
     padding: 70px 0;
 }
-#our-skills .skills .skill{
+
+#our-skills .skills .skill {
     display: flex;
     justify-content: center;
     gap: 25px;
@@ -374,32 +426,36 @@ section:not(#landing) h1{
     height: 33px;
     padding: 35px;
     margin-bottom: 50px;
-    background-color: white ;
+    background-color: white;
     width: 80%;
-    margin:25px auto;
+    margin: 25px auto;
 }
-#our-skills .skills h5{
+
+#our-skills .skills h5 {
     font-weight: 700;
     text-align: center;
     padding-top: 6px;
 }
+
 #our-skills .skills .progress {
     width: 70%;
     background-color: #EEE;
     border-radius: 5px;
     height: 33px;
 }
-#our-skills .skills .progress span{
+
+#our-skills .skills .progress span {
     background-color: var(--main-color);
 }
 
 /*End  our skills section*/
 
 /*start  gallery section*/
-#gallery{
+#gallery {
     margin-top: 80px;
 }
-#gallery .imgs-box{
+
+#gallery .imgs-box {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -409,23 +465,26 @@ section:not(#landing) h1{
     margin: auto;
 }
 
-#gallery .imgs-box .box{
+#gallery .imgs-box .box {
     width: 250px;
     height: 200px;
     padding: 5px;
     border: solid 1px gray;
 }
-.imgs-box .box img{
+
+.imgs-box .box img {
     cursor: pointer;
 }
-.imgs-box .box img ,.image-container img {
+
+.imgs-box .box img,
+.image-container img {
     width: 100%;
     height: 100%;
 }
 
-.image-container{
+.image-container {
     position: fixed;
-    width: 50%; 
+    width: 50%;
     height: fit-content;
     z-index: 99;
     background-color: white;
@@ -433,16 +492,18 @@ section:not(#landing) h1{
     top: 50%;
     left: 50%;
     padding: 8px;
-    transform: translate(-50% ,-50% );
+    transform: translate(-50%, -50%);
     display: none;
 }
-.image-container h5{
+
+.image-container h5 {
     color: var(--main-color);
     text-align: center;
     font-weight: 600;
 
 }
-.image-container .close-me{
+
+.image-container .close-me {
     font-weight: 800;
     font-size: 24px;
     color: white;
@@ -458,6 +519,7 @@ section:not(#landing) h1{
     top: -20px;
     cursor: pointer;
 }
+
 /*End  gallery section*/
 
 /*start  timeline section*/
@@ -467,41 +529,45 @@ section:not(#landing) h1{
     padding-top: 35px;
 
 }
+
 #timeline .timeline-container {
     border-right: solid 2px var(--main-color);
     width: 50%;
     margin-left: 0;
-    height:100% ;
+    height: 100%;
     position: relative;
 }
-.article-box{
+
+.article-box {
     position: relative;
     height: 250px;
     margin-left: 17px;
 }
 
-#timeline .year-articles{
+#timeline .year-articles {
     width: 100%;
     margin: 0;
     margin-bottom: 70px;
     position: relative;
 }
-#timeline .year-articles:last-child{
+
+#timeline .year-articles:last-child {
     padding-bottom: 100px;
 }
 
-#timeline .year-articles .d-o-p{
+#timeline .year-articles .d-o-p {
     position: absolute;
     background-color: var(--main-color);
     color: white;
     font-weight: 700;
     font-size: 17px;
-    border-radius: 4px ;
-    right: -25px ;
+    border-radius: 4px;
+    right: -25px;
     top: 15px;
     padding: 3px;
 }
-#timeline .year-articles .article-circle{
+
+#timeline .year-articles .article-circle {
     width: 20px;
     height: 20px;
     border: solid 3px var(--main-color);
@@ -509,9 +575,10 @@ section:not(#landing) h1{
     border-radius: 50%;
     position: absolute;
     right: -12px;
-    top: 122px ;
+    top: 122px;
 }
-#timeline .year-articles .article{
+
+#timeline .year-articles .article {
     width: 90%;
     background-color: white;
     padding: 13px;
@@ -520,40 +587,43 @@ section:not(#landing) h1{
     right: 20px;
 }
 
-#timeline .year-articles .article.left{
-    transform: rotateY(-180deg) 
-    translateX(calc(-100% - 45px)) ;
+#timeline .year-articles .article.left {
+    transform: rotateY(-180deg) translateX(calc(-100% - 45px));
 }
 
-#timeline .year-articles  .article.left *{
-transform: rotateY(-180deg) ;
+#timeline .year-articles .article.left * {
+    transform: rotateY(-180deg);
 }
 
-#timeline .year-articles .article h3{
+#timeline .year-articles .article h3 {
     color: var(--main-color);
     font-weight: 600;
 }
-#timeline .year-articles .article p{
+
+#timeline .year-articles .article p {
     color: #666;
     line-height: 1.5;
 }
-#timeline .year-articles .article::before{
+
+#timeline .year-articles .article::before {
     position: absolute;
     content: '';
     border: solid;
-    border-width: 10px ; 
-    border-color: transparent transparent  transparent white;
+    border-width: 10px;
+    border-color: transparent transparent transparent white;
     top: 20px;
     right: -20px;
 
 }
+
 /*End  timline section*/
 
 /*start  features section*/
-#features{
-        margin-top: 100px;
+#features {
+    margin-top: 100px;
 }
-#features .features-container{
+
+#features .features-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -562,55 +632,62 @@ transform: rotateY(-180deg) ;
     padding: 20px 0;
 }
 
-#features .features-container .feature{
+#features .features-container .feature {
     width: 380px;
 }
-#features .features-container .feature .box{
+
+#features .features-container .feature .box {
     width: 100%;
     text-align: center;
 }
-#features .features-container .feature .box img{
+
+#features .features-container .feature .box img {
     width: 60%;
 }
-#features .features-container .feature .box h3{
+
+#features .features-container .feature .box h3 {
     font-weight: 700;
     text-align: center;
     margin: 18px 0;
 }
-#features .features-container .feature .box hr{
+
+#features .features-container .feature .box hr {
     width: 15%;
     margin: auto;
     background-color: var(--main-color);
     color: var(--main-color);
-    height:  5px;
+    height: 5px;
     opacity: unset;
     margin-bottom: 12px;
 }
-#features .features-container .feature p{
+
+#features .features-container .feature p {
     text-align: center;
     color: #666;
     line-height: 1.6;
 
 }
+
 /*End  features section*/
 
 /*start  testimonials section*/
-#testimonials{
+#testimonials {
     padding: 95px 35px 65px 35px;
-    background-image: linear-gradient(to right ,var(--main-color), #666);
-        display: flex;
+    background-image: linear-gradient(to right, var(--main-color), #666);
+    display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 100px;
 }
 
-#testimonials .testimonials-container h3{
+#testimonials .testimonials-container h3 {
     color: white;
     font-weight: 700;
     margin-bottom: 40px;
     padding-left: 55px;
 }
-#testimonials .testimonials-container .employees-cont{
+
+#testimonials .testimonials-container .employees-cont {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -619,39 +696,48 @@ transform: rotateY(-180deg) ;
     width: 100%;
     margin: auto;
 }
-#testimonials .testimonials-container .employees-cont .employee{
+
+#testimonials .testimonials-container .employees-cont .employee {
     width: 30%;
     background-color: white;
     padding: 15px;
 }
-#testimonials .testimonials-container .employee .name-job{
+
+#testimonials .testimonials-container .employee .name-job {
     margin-top: 28px;
 }
-#testimonials .testimonials-container .employee p{
+
+#testimonials .testimonials-container .employee p {
     color: #666;
     line-height: 1.5;
 }
-#testimonials .testimonials-container .employee h5{
+
+#testimonials .testimonials-container .employee h5 {
     font-weight: 700;
 }
+
 /*End  testimonials section*/
 
 /*start  contacts section*/
-#contact-us{
+#contact-us {
     background-image: url('../imgs/contact.png');
     background-size: cover;
     margin-top: 100px;
 }
-#contact-us .contacts-container{
+
+#contact-us .contacts-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
 }
-#contact-us .contacts-container form.info  , .message{
-    width: 500px ; 
+
+#contact-us .contacts-container form.info,
+.message {
+    width: 500px;
 }
-#contact-us .contacts-container form.info input{
+
+#contact-us .contacts-container form.info input {
     display: block;
     width: 90%;
     margin: 15px auto;
@@ -659,16 +745,20 @@ transform: rotateY(-180deg) ;
     padding: 5px;
     border: solid 1px gray;
 }
-#contact-us .contacts-container form.info input:last-child{
+
+#contact-us .contacts-container form.info input:last-child {
     margin-bottom: 0;
 }
-#contact-us .contacts-container form.info input:focus , #contact-us .contacts-container .message textarea:focus{
+
+#contact-us .contacts-container form.info input:focus,
+#contact-us .contacts-container .message textarea:focus {
     outline: none;
     border: 2px solid var(--main-color);
-    border-left: none ;
+    border-left: none;
     background-color: transparent;
 }
-#contact-us .contacts-container .message{
+
+#contact-us .contacts-container .message {
     padding-top: 15px;
     display: flex;
     flex-direction: column;
@@ -676,13 +766,16 @@ transform: rotateY(-180deg) ;
     align-items: center;
     gap: 25px;
 }
-#contact-us .contacts-container .message textarea{
-    background-color:  #eeeeee8c;
+
+#contact-us .contacts-container .message textarea {
+    background-color: #eeeeee8c;
 }
-#contact-us .contacts-container .message textarea::placeholder{
+
+#contact-us .contacts-container .message textarea::placeholder {
     padding: 8px;
 }
-#contact-us .contacts-container button{
+
+#contact-us .contacts-container button {
     display: block;
     width: 79%;
     background-color: var(--main-color);
@@ -690,16 +783,17 @@ transform: rotateY(-180deg) ;
     color: white;
     border: none;
 }
+
 /*End  contacts section*/
 
 /*start  footer section*/
-footer{
+footer {
     background-color: #333;
     color: #EEE;
     width: 100%;
     word-spacing: 5px;
     text-align: center;
-   margin-top: 60px ;
+    margin-top: 60px;
     padding: 20px;
 }
 
@@ -707,94 +801,116 @@ footer{
 /*End  footer section*/
 /*Medias*/
 
-@media (max-width:1030px){
+@media (max-width:1030px) {
 
-    header{
+    header {
         position: relative;
-     }
-    nav{
-        display: none;
-    position: absolute;
-    bottom: -270px;
-    right: -5px;
-    width: 100%;
     }
-    #landing .overlay header ul{
+
+    nav {
+        display: none;
+        position: absolute;
+        bottom: -270px;
+        right: -5px;
         width: 100%;
     }
-    #landing .overlay header ul a:hover{
-font-size: 20px;
+
+    #landing .overlay header ul {
+        width: 100%;
     }
-    #landing .overlay header i{
+
+    #landing .overlay header ul a:hover {
+        font-size: 20px;
+    }
+
+    #landing .overlay header i {
         display: block;
     }
-    #about-us .info{
+
+    #about-us .info {
         text-align: center;
         width: 100%;
     }
-    #about-us .info p{
+
+    #about-us .info p {
         width: 100%;
         padding: 0 10px;
     }
-    #about-us .image{
+
+    #about-us .image {
         width: 35%;
     }
-    #about-us .image img{
+
+    #about-us .image img {
         width: 100%;
     }
 
-/*testimonials*/
-#testimonials .testimonials-container h3{
-text-align: center;
-padding-left: 0;
-    
-}
-#testimonials .testimonials-container .employees-cont .employee{
-    width: 70%;
+    /*testimonials*/
+    #testimonials .testimonials-container h3 {
+        text-align: center;
+        padding-left: 0;
 
-}
-/*end testimonials*/
+    }
 
-/*start contacts*/
-#contact-us .contacts-container{
-    align-items: center;
-}
-#contact-us .contacts-container .message{
-    padding-top: 0;
-}
-#contact-us .contacts-container form.info input{
-    width: 82%;
-}
-/*end contacts*/
+    #testimonials .testimonials-container .employees-cont .employee {
+        width: 70%;
+
+    }
+
+    /*end testimonials*/
+
+    /*start contacts*/
+    #contact-us .contacts-container {
+        align-items: center;
+    }
+
+    #contact-us .contacts-container .message {
+        padding-top: 0;
+    }
+
+    #contact-us .contacts-container .message textarea {
+        width: 85%;
+    }
+
+    #contact-us .contacts-container form.info input {
+        width: 82%;
+    }
+
+    /*end contacts*/
 }
 
 /*start timeline*/
 
-@media (max-width: 820px){
-    #timeline{
+@media (max-width: 820px) {
+    #timeline {
         position: relative;
     }
-    #timeline .year-articles .article-circle ,
-    #timeline .year-articles .article::before{
+
+    #timeline .year-articles .article-circle,
+    #timeline .year-articles .article::before {
         display: none;
     }
-    .article-box{
+
+    .article-box {
         width: 200%;
         margin-left: 0;
         margin-bottom: 25px;
     }
-    .article-box:last-child{
+
+    .article-box:last-child {
         margin-bottom: 100px;
     }
-    #timeline .year-articles{
+
+    #timeline .year-articles {
         margin-bottom: 0;
-        
+
     }
-    #timeline .year-articles:last-child{
+
+    #timeline .year-articles:last-child {
         padding-bottom: 20px;
     }
 
-    #timeline .year-articles .article{
+    #timeline .year-articles .article {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -802,68 +918,79 @@ padding-left: 0;
         top: 80px;
     }
 
-    #timeline .year-articles .article.left{
-        transform: rotateY(0) 
-        translateX(0) ;
+    #timeline .year-articles .article.left {
+        transform: rotateY(0) translateX(0);
     }
-    #timeline .year-articles  .article.left *{
-    transform: rotateY(0) ;
+
+    #timeline .year-articles .article.left * {
+        transform: rotateY(0);
     }
-} 
+}
+
 /*end timeline*/
 @media (max-width: 300px) {
-    .overlay .title h1{
+    .overlay .title h1 {
         font-size: 24px;
     }
 
-    #about-us .info p{
+    #about-us .info p {
         width: 100%;
     }
-    #gallery .imgs-box .box{
-        width:100% ;
+
+    #gallery .imgs-box .box {
+        width: 100%;
     }
-/*skills*/
-#our-skills .skills .skill{
-    flex-direction: column;
-    height: fit-content;
-}
-/*end*/
 
-/*gallery*/
-#gallery .imgs-box{
-    width: 70%;
-}
-#gallery .imgs-box .box{
-    width: 200px;
-    height: 150px;
-}
-/*end*/
+    /*skills*/
+    #our-skills .skills .skill {
+        flex-direction: column;
+        height: fit-content;
+    }
 
-/*timeline*/
-#timeline .year-articles .article{
-    padding: 10px 15px 0 0;
-    padding-left: 40px;
-}
-/*end*/
+    /*end*/
 
-/*features*/
-#features .features-container .feature .box img{
-    width: 35%;
-}
-/*end*/
+    /*gallery*/
+    #gallery .imgs-box {
+        width: 70%;
+    }
 
-/*testimonials*/
-#testimonials .testimonials-container .employees-cont .employee{
-    width: 100%;
-}
-/*end*/
+    #gallery .imgs-box .box {
+        width: 200px;
+        height: 150px;
+    }
 
-/*contacts*/
-#contact-us .contacts-container  form.info input{
-width: 77% ;
-}
-#contact-us .contacts-container .message textarea{
-    width: 79%;
-}
-/*end*/
+    /*end*/
+
+    /*timeline*/
+    #timeline .year-articles .article {
+        padding: 10px 15px 0 0;
+        padding-left: 40px;
+    }
+
+    /*end*/
+
+    /*features*/
+    #features .features-container .feature .box img {
+        width: 35%;
+    }
+
+    /*end*/
+
+    /*testimonials*/
+    #testimonials .testimonials-container .employees-cont .employee {
+        width: 100%;
+    }
+
+    /*end*/
+
+    /*contacts*/
+    #contact-us .contacts-container form.info input {
+        width: 77%;
+    }
+
+    #contact-us .contacts-container .message textarea {
+        width: 79%;
+    }
+
+    /*end*/
 }
