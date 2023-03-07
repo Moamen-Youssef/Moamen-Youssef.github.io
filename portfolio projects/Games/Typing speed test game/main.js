@@ -15,6 +15,7 @@ const score = document.getElementsByClassName('score')[0]
 const wordsScore = document.getElementsByClassName('words-score')[0] ;
 const controlBar = document.getElementsByClassName('control')[0] ;
 const endMsg = document.getElementById('end-msg') ;
+const alert = document.querySelector('.alert') ;
 // put any number of words
 const words = [
  'fortran'  , 'up' , 'python' , 'dodz' , 'javascript' , 'yellow' , 'dynamic'
@@ -91,7 +92,7 @@ const generateRandomWord = ()=>{
 }
 
 const startGame = ()=>{
-
+alert.setAttribute('hidden' , '')
 generateRandomWord() ;
 
 for(let i =0 ; i< words.length ; i++ ){

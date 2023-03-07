@@ -15,6 +15,13 @@ width:100% ;
 color: white;
 }
 
+.alert{
+    border: solid 1px;
+    text-align: center;
+    font-family:monospace ;
+    background-color: #f8d7da;
+    font-weight: 00;
+}
 .select-btn , .start-btn , .restart{
     width: 50%;
     display: block;

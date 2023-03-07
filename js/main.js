@@ -115,7 +115,8 @@ window.addEventListener('scroll', onScroll);
 burgerIcon.addEventListener('click', burgerIconClick);
 //close icon click
 closeIcon.addEventListener('click', closeIconClick);
-
+//navElems click 
+navElms.forEach(elem=>{elem.addEventListener('click' , closeIconClick)})
 //###########################################################
 // END HEADING SECTION
 

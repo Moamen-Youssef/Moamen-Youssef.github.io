@@ -12,6 +12,7 @@ body * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    border: solid;
 }
 
 /*START MAIN SECTION*/
@@ -60,7 +61,7 @@ section .back-text h2 {
 #main header {
     position: fixed;
     width: 100%;
-    height: 100px;
+    height: 70px;
     z-index: 5;
     background-color: var(--main-color);
 }
@@ -646,15 +647,7 @@ i.fa-free-code-camp {
         margin-left: 0;
         padding-left: 0;
     }
-    #about-me .back-text h1 {
-        font-size: 70px;
-    }
-    #about-me .back-text h2 {
-        top: 55%;
-        right: 50%;
-        transform: translate(50%, 0%);
 
-    }
     #about-me .E-E {
         flex-direction: column;
         gap: 35px;
@@ -669,7 +662,7 @@ i.fa-free-code-camp {
     }
     #about-me .E-E .content h4 ,
     #about-me .E-E .content h6 ,   #about-me .E-E .content p{
-        width: 100%;
+        width: 98%;
        padding-left: 30px;
        padding-right: 1px;
     }
@@ -751,5 +744,13 @@ i.fa-free-code-camp {
     }
 
  
+    #about-me .back-text h1 {
+        font-size: 70px;
+    }
+    #about-me .back-text h2 {
+        top: 55%;
+        right: 50%;
+        transform: translate(50%, 0%);
 
+    }
 }
