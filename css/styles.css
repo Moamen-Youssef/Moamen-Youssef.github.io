@@ -61,7 +61,7 @@ section .back-text h2 {
 #main header {
     position: fixed;
     width: 100%;
-    height: 70px;
+    height: 90px;
     z-index: 5;
     background-color: var(--main-color);
 }
@@ -500,7 +500,7 @@ i.fa-free-code-camp {
     /* move image to the top */
     #main header {
         transition: ease .6s;
-
+        height: 70px;
     }
 
     #main header.active {
