@@ -49,8 +49,22 @@ section .back-text h2 {
     color: var(--main-color);
 
 }
+/*#####################*/
+.timer-sec {
+    border: solid 1px;
+    border-radius: 8px;
+    width: 180px;
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    padding: 5px;
+}
 
-
+.time {
+    font-weight: 600;
+}
+/*####################*/
 #main {
     background-color: var(--main-color);
     height: 100vh;
@@ -378,7 +392,7 @@ i.react {
 }
 
 .projects a {
-    width: 380px
+    width: 380px;
 }
 
 .projects .project-card {
@@ -679,12 +693,7 @@ i.fa-free-code-camp {
         left: 0;
         padding-left: 0;
     }
-
-}
-
-
-
-/* END ABOUT ME SECTION */
+    /* END ABOUT ME SECTION */
 
 /* START SKILLS SECTION */
 #skills .skills-cont .skill {
@@ -706,6 +715,12 @@ i.fa-free-code-camp {
 .socials {
     width: 60%;
 }
+
+
+}
+
+
+
 
 @media (max-width: 500px) {
     .projects a {
