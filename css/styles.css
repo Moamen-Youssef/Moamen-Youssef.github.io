@@ -491,6 +491,9 @@ i.fa-whatsapp {
 i.fa-free-code-camp {
     background-color: #0a0a23;
 }
+i.fa-codepen {
+    background-color: #000000 ;
+}
 
 /*  END CONTACT SECTION*/
 
@@ -715,7 +718,16 @@ i.fa-free-code-camp {
     }
 
     .socials {
-        width: 75%;
+        width: 90%;
+    }
+}
+@media (max-width: 300px) {
+
+
+    .socials {
+        flex-wrap:wrap ;
+        justify-content: flex-start;
+        gap: 10px;
     }
 }
 
