@@ -853,6 +853,13 @@ bottom: 2.5%;
     align-items: center;
 }
 }
+@media (max-width: 500px) {
+    .small-circles span{
+        bottom: -45%;
+    }
+        
+}
+
 @media (max-width:300px) {
         /*portfolio section*/
         #portfolio .photos-bar ul {

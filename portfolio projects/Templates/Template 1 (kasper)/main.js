@@ -20,7 +20,6 @@ setInterval(()=>{
 
    set = setInterval(()=>{
 sensor = undefined ;
-console.log('im here ya mo8afal')
         }, 5000)
 //end
 

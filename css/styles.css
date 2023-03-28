@@ -49,21 +49,7 @@ section .back-text h2 {
     color: var(--main-color);
 
 }
-/*#####################*/
-.timer-sec {
-    border: solid 1px;
-    border-radius: 8px;
-    width: 180px;
-    float: right;
-    margin-right: 10px;
-    margin-top: 10px;
-    margin-bottom: 50px;
-    padding: 5px;
-}
 
-.time {
-    font-weight: 600;
-}
 /*####################*/
 #main {
     background-color: var(--main-color);

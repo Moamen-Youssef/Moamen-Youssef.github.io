@@ -1,4 +1,4 @@
-// START MAIN SECTION
+// // START MAIN SECTION
 
 //variables
 const navBar = document.querySelector('header nav ul');
@@ -98,8 +98,8 @@ const onScroll = () => {
 //#############################################################
 
 //Events 
-myImg.addEventListener('click', ()=>{
-    window.scrollTo(0,0);
+myImg.addEventListener('click', () => {
+    window.scrollTo(0, 0);
 })
 document.addEventListener("DOMContentLoaded", autoType);
 window.addEventListener('resize', () => {
@@ -116,7 +116,7 @@ burgerIcon.addEventListener('click', burgerIconClick);
 //close icon click
 closeIcon.addEventListener('click', closeIconClick);
 //navElems click 
-navElms.forEach(elem=>{elem.addEventListener('click' , closeIconClick)})
+navElms.forEach(elem => { elem.addEventListener('click', closeIconClick) })
 //###########################################################
 // END HEADING SECTION
 
@@ -207,8 +207,5 @@ portfolioSection.addEventListener('mouseover', (e) => {
 
 })
 
-//END PORTFOLIO SECTION
+// //END PORTFOLIO SECTION
 
-//#####################################
-
-//########################################

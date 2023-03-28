@@ -308,7 +308,9 @@ input {
 
 /* medias */
 @media (max-width: 500px) {
-
+    .timer-sec {
+        width: 200px;
+    }
    .cat-num{
     right: 0%;
     transform: translateX(0%);

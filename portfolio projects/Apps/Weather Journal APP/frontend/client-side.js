@@ -1,7 +1,5 @@
 const apiKey = "&appid=da1b25f5a3750d676cf377cfaf631ca2&units=metric" ;
 const url = `https://api.openweathermap.org/data/2.5/weather?zip=` ;
-const server = "http://localhost:8000" ;
-
 let temp ;
 
 const getApiData = async(zipCode)=>{const response =   await fetch(url+zipCode+apiKey) 
@@ -10,19 +8,7 @@ const getApiData = async(zipCode)=>{const response =   await fetch(url+zipCode+a
     return temp
 }
 
-const postData = async(data)=>{
-        console.log(data)
-        await fetch(`${server}/addWeatherData` ,{
-         method:"POST" ,
-         headers:{"content-Type" : "application/json"} ,
-         body : JSON.stringify(data)
-})}
 
- const getServerData = async()=>{
-    const getData = await fetch(`${server}/allData`)
-    displayData = await getData.json() ;
-    return displayData
- }   
 
 
 const updateUI = (displayData) => {
@@ -52,14 +38,8 @@ await getApiData(zipCode).catch(()=>{{
      i didnt know how to handle this so i added this setTimeOut function */  
       setTimeout(()=>{location.reload()}, 1500)}})
 // post data to server
-await postData({tempreture: temp , date : date , feelings : userInput})
-.then(await performAction2())
-}
-
-const performAction2 = async()=>{
-// get data from server // update UI
-const displayData= await getServerData()
-updateUI(displayData)
+ const  displayData =  {tempreture: temp , date : date , feelings : userInput}
+ updateUI(displayData)
 }
 
 document.getElementById("generate").addEventListener("click" , performAction)

@@ -1,50 +1,53 @@
 // variables
-const category = document.querySelector('.questions-sec .question .category') ;
-const question = document.querySelector('.questions-sec .question .the-question') ;
-const questionNumber = document.querySelector('.questions-sec .question .question-num') ;
-const answers = document.querySelectorAll('.questions-sec form label') ;
-const answersInput = document.querySelectorAll('.questions-sec form input') ;
-const answersArr = [...answers] ;
+const category = document.querySelector('.questions-sec .question .category');
+const question = document.querySelector('.questions-sec .question .the-question');
+const questionNumber = document.querySelector('.questions-sec .question .question-num');
+const answers = document.querySelectorAll('.questions-sec form label');
+const answersInput = document.querySelectorAll('.questions-sec form input');
+const answersArr = [...answers];
 const inputsArr = [...answersInput]
-const nextBtn = document.querySelector('button.next-btn') ; 
-const previousBtn = document.querySelector('button.previous-btn') ; 
-const attemptBtn = document.querySelector('button.attempt-btn') ;
-const rightAswers = ["right ans q1","right ans q2","right ans q3","right ans q33","right ans q4","right ans q5","right ans q6","right ans q7"] ;
-let categories = [] ;  
-let questionsArr = [] ;
-let studentAnswers = [] ; // the array of the student's answers (assosiatd to questionsArr) 
+const nextBtn = document.querySelector('button.next-btn');
+const previousBtn = document.querySelector('button.previous-btn');
+const attemptBtn = document.querySelector('button.attempt-btn');
+const rightAswers = ["right ans q1", "right ans q2", "right ans q3", "right ans q33", "right ans q4", "right ans q5", "right ans q6", "right ans q7"];
+let hrs = document.querySelector('.hours')
+let mins = document.querySelector('.minutes')
+let secs = document.querySelector('.seconds')
+let categories = [];
+let questionsArr = [];
+let studentAnswers = []; // the array of the student's answers (assosiatd to questionsArr) 
 let questionsArrIndex = 0;
-let length = 0 ;// number of all questions
-let index = 0 ; // categories array's index
+let length = 0;// number of all questions
+let index = 0; // categories array's index
 let arrIndex = 0; //the question index in the arr array (category questions)
 //
-const  data = async()=>{
+const data = async () => {
 
     //fetch data
     const displayData = await fetch("data.json");
     let data = await displayData.json();
 
-//functions
+    //functions
 
 
- //-[0]
+    //-[0]
     //append category name to the page
     const categoryName = () => {
         category.innerHTML = categories[index];
     }
 
-//-[1]
+    //-[1]
     // dedect the number of questions && collect all questions in an array
     const questionsToPush = () => {
         for (let i = 0; i < categories.length; i++) {
-            let length2 = Object.keys(data[categories[i]]).length; 
+            let length2 = Object.keys(data[categories[i]]).length;
             length += length2;
             //create array of questions
             questionsArr.push(...Object.keys(data[categories[i]]))
         }
     }
 
-//-[2]
+    //-[2]
     // append value attribute text
     const addValueAttributeText = () => {
         answersInput.forEach(input => {
@@ -52,7 +55,7 @@ const  data = async()=>{
         })
     }
 
-//-[3]
+    //-[3]
     // fetch answers of the question and append it to the page
     const appendAnswers = () => {
         for (let q in data[categories[index]]) {
@@ -69,14 +72,14 @@ const  data = async()=>{
         }
     }
 
-//-[4]
+    //-[4]
     //to append question number
     const appendQuestionNumber = () => {
         questionsArrIndex = questionsArr.indexOf(question.innerHTML);
         questionNumber.innerHTML = `Q-${questionsArrIndex + 1}`;
     }
 
-//-[5]
+    //-[5]
     //function that LOOP through the questions of category and go to next or previous question
     const moveTo = () => {
 
@@ -139,11 +142,11 @@ const  data = async()=>{
 
     }
 
-//-[6]
+    //-[6]
     //go to next question when click the next button 
     const goToNextQuestion = () => {
         previousBtn.removeAttribute('disabled', '');
-        previousBtn.classList.add('change-curser') ;
+        previousBtn.classList.add('change-curser');
         arrIndex++;
         // check if questions ended then move to the next category
         if (arrIndex == arr.length) {
@@ -163,7 +166,7 @@ const  data = async()=>{
         }
     }
 
-//-[7]
+    //-[7]
     // go to the previous question 
     const backToPreviousQuestion = () => {
 
@@ -185,13 +188,13 @@ const  data = async()=>{
         }
     }
 
-//-[8]
+    //-[8]
     const generateKeysArr = () => {
         //arr of questions of the category
         arr = Object.keys(data[categories[index]]);
     }
 
-//-[9]
+    //-[9]
     const saveToStorage = (e) => {
         //push the answer to the checkerArr in the index assosiated with the questionsArr
         answersArr.some(
@@ -210,21 +213,106 @@ const  data = async()=>{
 
     }
 
-//-[10]
+    //-[10]
     const confirmAtteptance = () => {
-        if(sessionStorage.length !== questionsArr.length){
+        if (sessionStorage.length !== questionsArr.length) {
             window.alert('there are still questions that you haven\'t seen yet')
         }
-        else{
+        else {
             let confirmMsg = window.confirm("Are you sure ? you will not be able to get back")
             if (confirmMsg == true) {
                 window.location.replace('result.html');
             }
+        }
     }
-    }
-//END 
 
-//start execution
+    //-[11]
+    class Timer {
+
+        seconds = 1;
+        timerInterval;
+
+        resetAndDecrease = () => {
+            this.minutes--;
+            this.seconds = 60;
+        }
+
+        secondDecrease = () => {
+            if (this.seconds !== 0) {
+                this.seconds--;
+            } else {
+                clearInterval(this.secondDecrease)
+            }
+        }
+
+        constructor(hours, minutes,funcToRun , ...HTMLelemsInDescendingOrder) {
+            
+            this.HTMLelemsInDescendingOrder = HTMLelemsInDescendingOrder
+            this.minutes = minutes;
+            this.hours = hours;
+            this.funcToRun = funcToRun
+        }
+
+        decreaseTo() {
+            return setInterval(this.secondDecrease, 995)
+        }
+        appendTimer() {
+            this.HTMLelemsInDescendingOrder[0].innerHTML = this.hours
+            this.HTMLelemsInDescendingOrder[1].innerHTML = this.minutes
+            this.HTMLelemsInDescendingOrder[2].innerHTML = this.seconds
+            this.HTMLelemsInDescendingOrder.forEach(elem => {
+                if (elem.innerHTML < 10) {
+                    elem.innerHTML = `0${elem.innerHTML}`
+                }
+            })
+        }
+
+        run() {
+
+            const quizTimer = () => {
+                if (this.seconds == 0) {
+                    throw new ('seconds must be greater than or equal to 1')
+                }
+                this.seconds--;
+                this.appendTimer()
+                if (this.seconds == 0) {
+                    if (this.hours == 0 && this.minutes == 0) {
+                        this.seconds = 0
+                        clearInterval(this.timerInterval)
+                        this.toDo()
+                    }
+                    if (this.minutes == 1) {
+                        if (this.hours == 0) {
+                            this.resetAndDecrease()
+                        } else {
+                            this.resetAndDecrease()
+                            async () => {
+                                decreaseTo();
+                            }
+                            this.hours--;
+                        }
+                    } else {
+                        this.resetAndDecrease()
+                    }
+                }
+            }
+            this.timerInterval = setInterval(quizTimer, 1020)
+        }
+        stop(){
+            clearInterval(this.timerInterval)
+        }
+        toDo(){
+            if(typeof this.funcToRun == "function"){
+                this.funcToRun()
+            }else{
+                return 'nothing'
+            }
+
+        }
+    }
+    //END 
+
+    //start execution
 
     // push categoris to an array
     for (let cat in data) {
@@ -237,22 +325,27 @@ const  data = async()=>{
     // adapt the length of student answers to be equal the questions array length 
     studentAnswers.length = questionsArr.length;
 
-    categoryName() ;
+    categoryName();
     appendAnswers();
+    const timer = new Timer(0, 1,()=>{
+        window.location.replace('result.html')
+    }, hrs, mins, secs);
+    timer.run();
 
-//END 
 
-//event listener
+    //END 
+
+    //event listener
 
     nextBtn.addEventListener('click', goToNextQuestion)
 
     previousBtn.addEventListener('click', backToPreviousQuestion)
 
-    attemptBtn.addEventListener('click', confirmAtteptance) 
+    attemptBtn.addEventListener('click', confirmAtteptance)
 
     answersInput.forEach(input => { input.addEventListener('click', saveToStorage) })
-    
-//END
+
+    //END
 
 }
 
