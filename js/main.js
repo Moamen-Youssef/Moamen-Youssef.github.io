@@ -1,4 +1,4 @@
-// // START MAIN SECTION
+// START MAIN SECTION
 
 //variables
 const navBar = document.querySelector('header nav ul');
@@ -8,7 +8,7 @@ const navElms = document.querySelectorAll('header nav ul a');
 const header = document.getElementsByTagName('header')[0];
 const myJob = document.querySelector('.auto-type');
 const myImg = document.querySelector('#main img');
-//############################################################
+//################################################
 
 //functions
 // delay the typing of my job text 
