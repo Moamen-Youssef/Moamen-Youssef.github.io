@@ -1,5 +1,23 @@
 {
+  "name": "moamen-youssef-portfolio",
+  "version": "1.0.0",
+  "description": "portfolio-website",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel . --out-dir lib --ignore node_modules,lib",
+    "deploy": "npm run build && echo 'Deploying application...'"
+  },
   "devDependencies": {
-    "babel-cli": "^6.26.0"
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "babel-loader": "^8.1.0"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
