@@ -394,12 +394,20 @@ i.react {
     border-radius: 7px;
     position: relative;
 }
-.projects .project-card .react-app{
+.projects .project-card .react-app,
+.projects .project-card .js-app
+{
     position: absolute;
     left: 0;
     border-radius: 50%;
     padding: 10px;
     background-color: white;
+}
+.projects .project-card .js-app{
+    background-color: rgb(71, 68, 68);
+
+
+   color: #f7df1e;
 }
 
 
